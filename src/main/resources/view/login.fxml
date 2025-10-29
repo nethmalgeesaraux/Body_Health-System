@@ -1,15 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController" prefWidth="360" prefHeight="240">
-    <VBox spacing="8" layoutX="30" layoutY="30">
-        <Label text="BodyHealth" style="-fx-font-size:18px; -fx-font-weight:bold;"/>
-        <TextField fx:id="txtUsername" promptText="Username"/>
-        <PasswordField fx:id="txtPassword" promptText="Password"/>
-        <HBox spacing="6">
-            <Button text="Login" onAction="#login"/>
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.LoginController"
+            prefWidth="420" prefHeight="340"
+            style="-fx-background-color: linear-gradient(to bottom right, #5C6BC0, #3949AB);">
+
+    <VBox spacing="15" alignment="CENTER" layoutX="50" layoutY="40" prefWidth="320">
+        <Label text="FitTrack Login" textFill="white" style="-fx-font-size: 26px; -fx-font-weight: bold;" />
+
+        <VBox spacing="10" alignment="CENTER_LEFT" prefWidth="260">
+            <Label text="Username" textFill="white" />
+            <TextField fx:id="txtUsername" promptText="Enter username" style="-fx-background-radius: 8;" />
+        </VBox>
+
+        <VBox spacing="10" alignment="CENTER_LEFT" prefWidth="260">
+            <Label text="Password" textFill="white" />
+            <PasswordField fx:id="txtPassword" promptText="Enter password" style="-fx-background-radius: 8;" />
+        </VBox>
+
+        <Label fx:id="lblMessage" textFill="yellow" style="-fx-font-weight: bold;" />
+
+        <HBox spacing="20" alignment="CENTER">
+            <Button text="Login"
+                    onAction="#login"
+                    prefWidth="100"
+                    style="-fx-background-color: #43A047; -fx-text-fill: white; -fx-background-radius: 8;" />
+            <Button text="Register"
+                    onAction="#register"
+                    prefWidth="100"
+                    style="-fx-background-color: #1E88E5; -fx-text-fill: white; -fx-background-radius: 8;" />
         </HBox>
-        <Label fx:id="lblMessage"/>
     </VBox>
+
 </AnchorPane>
