@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="CONTROLLER_NAME"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HealthController" prefWidth="600" prefHeight="420">
+    <VBox spacing="8" layoutX="10" layoutY="10" prefWidth="580">
+        <Label text="Record Health Metric" style="-fx-font-size:16px; -fx-font-weight:bold;"/>
+        <HBox spacing="8">
+            <DatePicker fx:id="dpDate"/>
+            <TextField fx:id="txtWeight" promptText="Weight (kg)"/>
+            <TextField fx:id="txtSys" promptText="Systolic"/>
+            <TextField fx:id="txtDia" promptText="Diastolic"/>
+            <TextField fx:id="txtHR" promptText="Heart rate"/>
+        </HBox>
+        <TextArea fx:id="txtNotes" promptText="Notes (optional)" prefRowCount="2"/>
+        <HBox spacing="8">
+            <Button text="Save" onAction="#saveMetric"/>
+        </HBox>
+        <Label fx:id="lblMsg"/>
+        <LineChart fx:id="chartWeight" prefHeight="250">
+            <xAxis>
+                <CategoryAxis/>
+            </xAxis>
+            <yAxis>
+                <NumberAxis/>
+            </yAxis>
+        </LineChart>
+    </VBox>
 </AnchorPane>
